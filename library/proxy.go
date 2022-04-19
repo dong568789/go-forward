@@ -42,7 +42,7 @@ func (p *Proxies) ParseAddr(s []string) *Proxies {
 	return p
 }
 
-func (p *Proxies) checkAddr(addr string) bool {
+func (p Proxies) checkAddr(addr string) bool {
 	regex := regexp.MustCompile(`^([\d]{1,3}\.){3}[\d]{1,3}:[\d]{2,5}$`)
 	if regex == nil {
 		util.Log().Panic("ip fail: %v", addr)

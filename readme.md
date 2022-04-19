@@ -5,5 +5,8 @@
 go build -o forward `
 
 启动
-forward -l 127.0.0.1:8080 -f 127.0.0.1:8081
+forward start --config=./config.yml
+
+后台启动
+nohup ./forward start --config=./config.yml  > ./runoob.log 2>&1 &
 ```
